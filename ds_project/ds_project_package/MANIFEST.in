@@ -1,0 +1,35 @@
+include *.txt
+include *.md
+include *.pkl
+include *.h5
+include *.jpeg
+recursive-include ./image_classification_model/*
+
+include image_classification_model/datasets/chest_xray
+include image_classification_model/datasets/chest_xray/train
+include image_classification_model/datasets/chest_xray/val
+include image_classification_model/datasets/chest_xray/test
+include image_classification_model/trained_models/*.pkl
+include image_classification_model/trained_models/*.h5
+include image_classification_model/VERSION
+include image_classification_model/config.yml
+include image_classification_model/datasets/chest_xray/train/NORMAL
+include image_classification_model/datasets/chest_xray/val/NORMAL
+include image_classification_model/datasets/chest_xray/test/NORMAL
+include image_classification_model/datasets/chest_xray/train/NORMAL/*.jpeg
+include image_classification_model/datasets/chest_xray/val/NORMAL/*.jpeg
+include image_classification_model/datasets/chest_xray/test/NORMAL/*.jpeg
+include image_classification_model/datasets/chest_xray/train/PNEUMONIA
+include image_classification_model/datasets/chest_xray/val/PNEUMONIA
+include image_classification_model/datasets/chest_xray/test/PNEUMONIA
+include image_classification_model/datasets/chest_xray/train/PNEUMONIA/*.jpeg
+include image_classification_model/datasets/chest_xray/val/PNEUMONIA/*.jpeg
+include image_classification_model/datasets/chest_xray/test/PNEUMONIA/*.jpeg
+
+include ./requirements/requirements.txt
+include ./requirements/test_requirements.txt
+exclude *.log
+exclude *.cfg
+
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]

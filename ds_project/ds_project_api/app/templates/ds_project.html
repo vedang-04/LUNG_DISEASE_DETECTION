@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Image Classification Model</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<div class="header">
+    <h1>LUNG DISEASE PREDICTION</h1>
+    <p>Please Upload the Image for Detection Below</p>
+</div>
+<body>
+<form action="/imageclassificationform" method="post" enctype="multipart/form-data">
+    <input type="file" name="assignment_file" accept="image/*">
+    <input type="submit" value="Upload">
+<div>
+    <p2>RESULT: </p2>
+    <p1>{{ result }}</p1>
+</div>
+</form>
+</body>
+</html>
+<style>
+    h1 {
+  color: black;
+  font-family: arial;
+  font-size: 300%;
+  text-align: center;
+}
+p {
+  color: red;
+  font-family: sans-serif;
+  font-size: 150%;
+  text-align: center;
+  padding-top: 25px;
+}
+p1 {
+  color: red;
+  font-family: sans-serif;
+  font-size: 150%;
+  padding-left: 20px;
+}
+p2 {
+  color: black;
+  font-family: sans-serif;
+  font-size: 150%;
+  padding-left: 300px;
+  margin-left: 230px;
+  line-height: 7;
+}
+input[type="file" i] {
+    appearance: none;
+    background-color: initial;
+    cursor: default;
+    align-items: baseline;
+    color: inherit;
+    text-overflow: ellipsis;
+    white-space: pre;
+    text-align: start !important;
+    padding: initial;
+    border: initial;
+    overflow: hidden !important;
+    font-size: 20px;
+    padding-top: 25px;
+    margin-left: 500px;
+}
+input[type="submit" i] {
+    appearance: auto;
+    user-select: none;
+    white-space: pre;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
+    color: -internal-light-dark(black, white);
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+    font-size: 20px;
+    margin-left: 90px;
+    margin-top: 50px;
+}
+</style>
