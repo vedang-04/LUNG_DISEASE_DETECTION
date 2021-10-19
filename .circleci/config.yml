@@ -9,7 +9,7 @@ prepare_venv: &prepare_venv
   run:
     name: Create venv
     command: |
-      python3 -m venv venv
+      python -m venv venv
       source venv/bin/activate
       pip install --upgrade pip
 prepare_tox: &prepare_tox
@@ -52,19 +52,29 @@ jobs:
     steps:
       - checkout:
           path: ~/project
-      - *prepare_tox
+      - *prepare_venv
+      - run:
+          name: Install requirements
+          command: |
+            . venv/bin/activate
+            pip install -r ds_project/ds_project_package/requirements/test_requirements.txt
       - run:
           name: Fetch the data
           command: |
-            tox -e fetch_data
+            . venv/bin/activate
+            chmod +x ./scripts/fetch_kaggle_large_dataset.sh
+            ./scripts/fetch_kaggle_large_dataset.sh
       - run:
           name: Test the model
           command: |
-            tox -e test_package
+            . venv/bin/activate
+            PYTHONPATH=./ds_project/ds_project_package python ds_project/ds_project_package/image_classification_model/train_pipeline.py
       - run:
           name: Publish model to Gemfury
           command: |
-            tox -e publish_model
+            . venv/bin/activate
+            chmod +x ./scripts/publish_model.sh
+            ./scripts/publish_model.sh ./ds_project/ds_project_package/
   deploy_app_container_in_heroku:
     <<: *defaults
     steps:
