@@ -134,49 +134,80 @@ def create_dataset(folder_name) -> pd.DataFrame:
         ),
         columns=["image_name"],
     )
-    df_n["label"] = df_n.image_name.apply(
-        lambda x: x.split("/",)[3].split(
-            "\\"
-        )[0]
-    )
+    try:
+        df_n["label"] = df_n.image_name.apply(
+            lambda x: x.split("/", )[3].split(
+                "\\"
+            )[0]
+        )
+    except:
+        df_n["label"] = df_n.image_name.apply(
+            lambda x: x.split("/", )[10]
+        )
     l1 = []
     l2 = []
     for x in glob(
-        str(DATASET_DIR)
-        + "/"
-        + config.app_config.folder
-        + "/"
-        + folder_name
-        + "/"
-        + config.app_config.subfolder_d
-        + "/*"
+            str(DATASET_DIR)
+            + "/"
+            + config.app_config.folder
+            + "/"
+            + folder_name
+            + "/"
+            + config.app_config.subfolder_d
+            + "/*"
     ):
         if "bacteria" in x:
             l1.append(x)
         else:
             l2.append(x)
     df_b = pd.DataFrame(l1, columns=["image_name"])
-    df_b["label"] = df_b.image_name.apply(
-        lambda b: config.app_config.subfolder_d
-        + "_"
-        + b.split(
-            "/",
-        )[3]
-        .split("\\")[1]
-        .split("_")[1]
-        .upper()
-    )
+    try:
+        df_b["label"] = df_b.image_name.apply(
+            lambda b: config.app_config.subfolder_d
+                      + "_"
+                      + b.split(
+                "/",
+            )[3]
+                          .split("\\")[1]
+                          .split("_")[1]
+                          .upper()
+        )
+    except:
+        df_b["label"] = df_b.image_name.apply(
+            lambda b: b.split(
+                "/",
+            )[10]
+                      + "_"
+                      + b.split(
+                "/",
+            )[11]
+                          .split("_")[1]
+                          .upper()
+        )
     df_v = pd.DataFrame(l2, columns=["image_name"])
-    df_v["label"] = df_v.image_name.apply(
-        lambda v: config.app_config.subfolder_d
-        + "_"
-        + v.split(
-            "/",
-        )[3]
-        .split("\\")[1]
-        .split("_")[1]
-        .upper()
-    )
+    try:
+        df_v["label"] = df_v.image_name.apply(
+            lambda v: config.app_config.subfolder_d
+                      + "_"
+                      + v.split(
+                "/",
+            )[3]
+                          .split("\\")[1]
+                          .split("_")[1]
+                          .upper()
+        )
+    except:
+        df_v["label"] = df_v.image_name.apply(
+            lambda v: v.split(
+                "/",
+            )[10]
+                      + "_"
+                      + v.split(
+                "/",
+            )[11]
+                          .split("_")[1]
+                          .upper()
+        )
     df_i = pd.concat([df_n, df_b]).reset_index(drop=True)
     df = pd.concat([df_i, df_v]).reset_index(drop=True)
     return df
