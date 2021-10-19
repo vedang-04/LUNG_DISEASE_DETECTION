@@ -134,11 +134,11 @@ def create_dataset(folder_name) -> pd.DataFrame:
         ),
         columns=["image_name"],
     )
-    df_n["label"] = df_n.image_name.apply(
-        lambda x: x.split("/",)[3].split(
-            "\\"
-        )[0]
-    )
+    #df_n["label"] = df_n.image_name.apply(
+    #    lambda x: x.split("/",)[3].split(
+    #        "\\"
+    #    )[0]
+    #)
     l1 = []
     l2 = []
     for x in glob(
@@ -167,9 +167,9 @@ def create_dataset(folder_name) -> pd.DataFrame:
     #    .upper()
     #)
     df_v = pd.DataFrame(l2, columns=["image_name"])
-    print(df_n.image_name.iloc[0].split('//',))
-    print(df_b.image_name.iloc[0].split('//',))
-    print(df_v.image_name.iloc[0].split('//',))
+    print(df_n.image_name.iloc[0].split('/',))
+    print(df_b.image_name.iloc[0].split('/',))
+    print(df_v.image_name.iloc[0].split('/',))
     #df_v["label"] = df_v.image_name.apply(
     #    lambda v: config.app_config.subfolder_d
     #    + "_"
