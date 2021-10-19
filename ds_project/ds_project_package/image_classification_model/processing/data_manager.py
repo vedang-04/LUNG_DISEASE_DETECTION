@@ -156,7 +156,6 @@ def create_dataset(folder_name) -> pd.DataFrame:
         else:
             l2.append(x)
     df_b = pd.DataFrame(l1, columns=["image_name"])
-    print(df_b.image_name)
     #df_b["label"] = df_b.image_name.apply(
     #    lambda b: config.app_config.subfolder_d
     #    + "_"
@@ -168,7 +167,9 @@ def create_dataset(folder_name) -> pd.DataFrame:
     #    .upper()
     #)
     df_v = pd.DataFrame(l2, columns=["image_name"])
-    print(df_v.image_name)
+    print(df_n.image_name.iloc[0].split('//',))
+    print(df_b.image_name.iloc[0].split('//',))
+    print(df_v.image_name.iloc[0].split('//',))
     #df_v["label"] = df_v.image_name.apply(
     #    lambda v: config.app_config.subfolder_d
     #    + "_"
