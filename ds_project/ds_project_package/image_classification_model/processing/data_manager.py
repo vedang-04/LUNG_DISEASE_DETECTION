@@ -136,13 +136,21 @@ def create_dataset(folder_name) -> pd.DataFrame:
     )
     try:
         df_n["label"] = df_n.image_name.apply(
+<<<<<<< HEAD
             lambda x: x.split("/", )[3].split(
+=======
+            lambda x: x.split("/",)[3].split(
+>>>>>>> 1871c73bb604f089b24b4488da52940d43fd6927
                 "\\"
             )[0]
         )
     except:
         df_n["label"] = df_n.image_name.apply(
+<<<<<<< HEAD
             lambda x: x.split("/", )[10]
+=======
+            lambda x: x.split("/",)[10]
+>>>>>>> 1871c73bb604f089b24b4488da52940d43fd6927
         )
     l1 = []
     l2 = []
@@ -164,6 +172,7 @@ def create_dataset(folder_name) -> pd.DataFrame:
     try:
         df_b["label"] = df_b.image_name.apply(
             lambda b: config.app_config.subfolder_d
+<<<<<<< HEAD
                       + "_"
                       + b.split(
                 "/",
@@ -172,11 +181,22 @@ def create_dataset(folder_name) -> pd.DataFrame:
                           .split("_")[1]
                           .upper()
         )
+=======
+            + "_"
+            + b.split(
+                "/",
+            )[3]
+            .split("\\")[1]
+            .split("_")[1]
+            .upper()
+       )
+>>>>>>> 1871c73bb604f089b24b4488da52940d43fd6927
     except:
         df_b["label"] = df_b.image_name.apply(
             lambda b: b.split(
                 "/",
             )[10]
+<<<<<<< HEAD
                       + "_"
                       + b.split(
                 "/",
@@ -195,12 +215,36 @@ def create_dataset(folder_name) -> pd.DataFrame:
                           .split("\\")[1]
                           .split("_")[1]
                           .upper()
+=======
+            + "_"
+            + b.split(
+                "/",
+            )[11]
+            .split("_")[1]
+            .upper()
+       )
+    df_v = pd.DataFrame(l2, columns=["image_name"])
+    #print(df_n.image_name.iloc[0].split('/',))
+    #print(df_b.image_name.iloc[0].split('/',))
+    #print(df_v.image_name.iloc[0].split('/',))
+    try:
+        df_v["label"] = df_v.image_name.apply(
+            lambda v: config.app_config.subfolder_d
+            + "_"
+            + v.split(
+                "/",
+            )[3]
+            .split("\\")[1]
+            .split("_")[1]
+            .upper()
+>>>>>>> 1871c73bb604f089b24b4488da52940d43fd6927
         )
     except:
         df_v["label"] = df_v.image_name.apply(
             lambda v: v.split(
                 "/",
             )[10]
+<<<<<<< HEAD
                       + "_"
                       + v.split(
                 "/",
@@ -208,6 +252,15 @@ def create_dataset(folder_name) -> pd.DataFrame:
                           .split("_")[1]
                           .upper()
         )
+=======
+            + "_"
+            + v.split(
+                "/",
+            )[11]
+            .split("_")[1]
+            .upper()
+       )
+>>>>>>> 1871c73bb604f089b24b4488da52940d43fd6927
     df_i = pd.concat([df_n, df_b]).reset_index(drop=True)
     df = pd.concat([df_i, df_v]).reset_index(drop=True)
     return df
