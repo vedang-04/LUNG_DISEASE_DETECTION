@@ -73,8 +73,7 @@ jobs:
           name: Publish model to Gemfury
           command: |
             . venv/bin/activate
-            chmod +x ./scripts/publish_model.sh
-            ./scripts/publish_model.sh ./ds_project/ds_project_package/
+            ./scripts/publish_model.sh ./ds_project/ds_project_package
   deploy_app_container_in_heroku:
     <<: *defaults
     steps:

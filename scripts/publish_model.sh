@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Building packages and uploading them to a Gemfury
+GEMFURY_PUSH_URL="https://pAbh6siJk9sy1AWL6Myp@pypi.fury.io/vedang-04"
 GEMFURY_URL=$GEMFURY_PUSH_URL
 
 set -e

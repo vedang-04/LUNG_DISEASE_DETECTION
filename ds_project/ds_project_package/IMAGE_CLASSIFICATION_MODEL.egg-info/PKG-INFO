@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: IMAGE-CLASSIFICATION-MODEL
+Version: 4.0.2
+Summary: Lung Disease Detection model package
+Home-page: https://github.com/vedang-04/LUNG_DISEASE_DETECTION
+Author: Vedang
+Author-email: kshirsagarvedang62@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.9.5
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.6.0
+Description-Content-Type: text/markdown
+
+This is a package used to solve the problem statement of lung disease by detecting it based upon certain available data in the form of images of normal and diseased lungs. 
+
