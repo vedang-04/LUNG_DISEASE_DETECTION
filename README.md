@@ -84,9 +84,9 @@ tox -e run</br>
 5] Once the application starts running go to http://localhost:8001/imageclassificationform </br>
    Store the live data in C:\Users\kshir\OneDrive\Desktop\DS_PROJECT_1\ds_project\live_data for uploading. </br>
    
-**More on this repository in this file: **
+**More on this repository in this file:** https://drive.google.com/file/d/124NlI2jXW7TvRTKcupcb1Wy4FNHhNcyZ/view?usp=sharing</br>
 
-**Indepth Analysis and explanation of this repository in this file: *
+**Indepth Analysis and explanation of this repository in this file:** https://drive.google.com/file/d/1QY_cTHHLySQ10xkEpLQB-pS7Dl6Pnley/view?usp=sharing</br>
     
 # Contributors
 
