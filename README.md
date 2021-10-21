@@ -87,6 +87,8 @@ tox -e run</br>
 **More on this repository in this file:** https://drive.google.com/file/d/124NlI2jXW7TvRTKcupcb1Wy4FNHhNcyZ/view?usp=sharing</br>
 
 **Indepth Analysis and explanation of this repository in this file:** https://drive.google.com/file/d/1QY_cTHHLySQ10xkEpLQB-pS7Dl6Pnley/view?usp=sharing</br>
+
+**The files in the above mentioned two links are available in documents of this repository**</br>
     
 # Contributors
 
