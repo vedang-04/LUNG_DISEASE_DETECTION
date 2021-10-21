@@ -13,6 +13,7 @@ Based on State of the Art convolutional neural network model VGG16 (16 layers: 1
 
 Availabel on kaggle at: https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia </br>
 Advised to fetch it and not download it separately. More on it ahead. </br>
+Kaggle Account required for fetching the dataset.</br>
 
 # Requirements
 
@@ -82,6 +83,10 @@ tox -e run</br>
 
 5] Once the application starts running go to http://localhost:8001/imageclassificationform </br>
    Store the live data in C:\Users\kshir\OneDrive\Desktop\DS_PROJECT_1\ds_project\live_data for uploading. </br>
+   
+**More on this repository in this file: **
+
+**Indepth Analysis and explanation of this repository in this file: *
     
 # Contributors
 
