@@ -72,7 +72,7 @@ tox -e train_test_package </br>
 
 tox -e train_test_package </br> (use this to ensure that you have a trained model) </br>
 cd C:\Users\kshir\OneDrive\Desktop\DS_PROJECT_1\ds_project\package</br>
-python setup.py sdist bdist-wheel</br>
+python setup.py sdist bdist</br>
 pip install -e .</br>
 
 4] For running the Api
