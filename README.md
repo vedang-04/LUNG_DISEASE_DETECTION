@@ -64,20 +64,20 @@ isort==5.8.0</br>
 
 2] For training the model
 
-cd C:\Users\kshir\OneDrive\Desktop\DS_PROJECT_1\ds_project</br>
+cd C:\Users\kshir\OneDrive\Desktop\LUNG_DISEASE_DETECTION\ds_project</br>
 tox -e fetch_data (fetching the data) </br>
 tox -e train_test_package </br>
 
 3] For installing the package locally
 
 tox -e train_test_package </br> (use this to ensure that you have a trained model) </br>
-cd C:\Users\kshir\OneDrive\Desktop\DS_PROJECT_1\ds_project\package</br>
+cd C:\Users\kshir\OneDrive\Desktop\LUNG_DISEASE_DETECTION\ds_project\package</br>
 python setup.py sdist bdist-wheel</br>
 pip install -e .</br>
 
 4] For running the Api
 
-cd C:\Users\kshir\OneDrive\Desktop\DS_PROJECT_1\ds_project</br>
+cd C:\Users\kshir\OneDrive\Desktop\LUNG_DISEASE_DETECTION\ds_project</br>
 tox -e test_api</br>
 tox -e run</br>
 
